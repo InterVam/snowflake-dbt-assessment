@@ -1,0 +1,95 @@
+version: 2
+
+sources:
+  - name: tpch
+    description: "TPC-H sample data from Snowflake"
+    database: snowflake_sample_data
+    schema: tpch_sf1
+    tables:
+      - name: customer
+        description: "Customer information table"
+        columns:
+          - name: c_custkey
+            description: "Customer key (primary key)"
+            tests:
+              - unique
+              - not_null
+          - name: c_name
+            description: "Customer name"
+          - name: c_address
+            description: "Customer address"
+          - name: c_nationkey
+            description: "Nation key (foreign key)"
+          - name: c_phone
+            description: "Customer phone number"
+          - name: c_acctbal
+            description: "Customer account balance"
+          - name: c_mktsegment
+            description: "Market segment"
+          - name: c_comment
+            description: "Customer comment"
+
+      - name: orders
+        description: "Orders placed by customers"
+        columns:
+          - name: o_orderkey
+            description: "Order key (primary key)"
+            tests:
+              - unique
+              - not_null
+          - name: o_custkey
+            description: "Customer key (foreign key)"
+            tests:
+              - not_null
+          - name: o_orderstatus
+            description: "Order status"
+          - name: o_totalprice
+            description: "Total order price"
+          - name: o_orderdate
+            description: "Order date"
+          - name: o_orderpriority
+            description: "Order priority"
+          - name: o_clerk
+            description: "Clerk who processed the order"
+          - name: o_shippriority
+            description: "Shipping priority"
+          - name: o_comment
+            description: "Order comment"
+
+      - name: lineitem
+        description: "Line item details for each order"
+        columns:
+          - name: l_orderkey
+            description: "Order key (foreign key)"
+            tests:
+              - not_null
+          - name: l_partkey
+            description: "Part key"
+          - name: l_suppkey
+            description: "Supplier key"
+          - name: l_linenumber
+            description: "Line number"
+          - name: l_quantity
+            description: "Quantity ordered"
+          - name: l_extendedprice
+            description: "Extended price"
+          - name: l_discount
+            description: "Discount applied"
+          - name: l_tax
+            description: "Tax amount"
+          - name: l_returnflag
+            description: "Return flag"
+          - name: l_linestatus
+            description: "Line status"
+          - name: l_shipdate
+            description: "Ship date"
+          - name: l_commitdate
+            description: "Commit date"
+          - name: l_receiptdate
+            description: "Receipt date"
+          - name: l_shipinstruct
+            description: "Shipping instructions"
+          - name: l_shipmode
+            description: "Shipping mode"
+          - name: l_comment
+            description: "Line item comment"

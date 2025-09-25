@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: "Staging model for orders with customer information and derived columns"
+    columns:
+      - name: o_orderkey
+        description: "Order key (primary key)"
+        tests:
+          - unique
+          - not_null
+      - name: o_custkey
+        description: "Customer key (foreign key)"
+        tests:
+          - not_null
+      - name: customer_name
+        description: "Name of the customer who placed the order"
+        tests:
+          - not_null
+      - name: order_year
+        description: "Year the order was placed"
+        tests:
+          - not_null
+      - name: total_price
+        description: "Total price of the order"
+        tests:
+          - not_null
