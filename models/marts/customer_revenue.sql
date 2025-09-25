@@ -31,15 +31,15 @@ customer_revenue_calc as (
         c.c_mktsegment as market_segment,
         count(distinct o.o_orderkey) as total_orders,
         sum(o.o_totalprice) as total_order_value,
-        sum(coalesce(or.order_revenue, 0)) as total_revenue,
+        sum(coalesce(orev.order_revenue, 0)) as total_revenue,
         min(o.o_orderdate) as first_order_date,
         max(o.o_orderdate) as last_order_date,
         avg(o.o_totalprice) as avg_order_value
     from orders o
     left join customers c
         on o.o_custkey = c.c_custkey
-    left join order_revenue or
-        on o.o_orderkey = or.l_orderkey
+    left join order_revenue orev
+        on o.o_orderkey = orev.l_orderkey
     group by o.o_custkey, c.c_name, c.c_mktsegment
 )
 

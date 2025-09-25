@@ -24,5 +24,7 @@ models:
     # Config indicated by + and applies to all files under models/example/
     staging:
       +materialized: table
+      +schema: staging  # This will create tables in your_database.staging
     marts:
       +materialized: table
+      +schema: marts    # This will create tables in your_database.marts
