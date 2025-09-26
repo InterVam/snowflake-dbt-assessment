@@ -23,7 +23,7 @@ models:
   snowflake_tpch_demo:
     staging:
       +materialized: table
-      +schema: staging  
+      +schema: STAGING  
     marts:
       +materialized: table
-      +schema: marts  
+      +schema: MARTS  
