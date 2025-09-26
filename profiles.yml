@@ -1,0 +1,11 @@
+snowflake_tpch_demo:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      role: ''
+      warehouse: 'DEV_WH'
+      database: 'DEMO_DB'
+      schema: 'staging'
+      account: ' '
+      user: ' '
