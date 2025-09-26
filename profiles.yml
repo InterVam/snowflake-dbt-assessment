@@ -3,9 +3,9 @@ snowflake_tpch_demo:
   outputs:
     dev:
       type: snowflake
-      role: ''
+      role: 'ACCOUNTADMIN'
       warehouse: 'DEV_WH'
       database: 'DEMO_DB'
-      schema: 'staging'
+      schema: 'TPCH_SF1_STAGING'
       account: ' '
       user: ' '
