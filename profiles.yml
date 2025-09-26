@@ -6,6 +6,6 @@ snowflake_tpch_demo:
       role: 'ACCOUNTADMIN'
       warehouse: 'DEV_WH'
       database: 'DEMO_DB'
-      schema: 'TPCH_SF1_STAGING'
+      schema: 'TPCH_SF1'
       account: ' '
       user: ' '

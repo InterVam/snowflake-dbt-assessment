@@ -2685,3 +2685,975 @@ Object does not exist, or operation cannot be performed.
 [0m21:53:24.967148 [debug] [Dummy-1   ]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 6.109395, "process_in_blocks": "0", "process_kernel_time": 1.01, "process_mem_max_rss": "484640", "process_out_blocks": "0", "process_user_time": 9.22}
 [0m21:53:24.968038 [debug] [Dummy-1   ]: Command `cli compile` succeeded at 21:53:24.967702 after 6.11 seconds
 [0m21:53:24.969791 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 22:09:48.109704 | 1f594e8e-9d60-4bac-bec4-3336c9a1c0ca ==============================
+[0m22:09:48.109704 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m22:09:48.112084 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/tmp/dbt/logs', 'version_check': 'True', 'profiles_dir': '/tmp/dbt/', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt ', 'static_parser': 'True', 'introspect': 'True', 'target_path': '/tmp/dbt/target/', 'log_format': 'default', 'send_anonymous_usage_stats': 'False'}
+[0m22:09:48.545790 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m22:09:49.782851 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m22:09:49.984593 [info ] [Dummy-1   ]: Unable to do partial parsing because profile has changed
+[0m22:09:52.409840 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m22:09:52.414853 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m22:09:52.485293 [info ] [Dummy-1   ]: Found 3 models, 20 data tests, 3 sources, 474 macros
+[0m22:09:52.489866 [info ] [Dummy-1   ]: 
+[0m22:09:52.491805 [info ] [Dummy-1   ]: Concurrency: 1 threads (target='dev')
+[0m22:09:52.492848 [info ] [Dummy-1   ]: 
+[0m22:09:52.494380 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m22:09:52.504596 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SNOWFLAKE_SAMPLE_DATA_TPCH_SF1_marts'
+[0m22:09:52.739322 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_SAMPLE_DATA_TPCH_SF1_marts"
+[0m22:09:52.740379 [debug] [ThreadPool]: On list_SNOWFLAKE_SAMPLE_DATA_TPCH_SF1_marts: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "snowflake_tpch_demo", "target_name": "dev", "connection_name": "list_SNOWFLAKE_SAMPLE_DATA_TPCH_SF1_marts"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m22:09:52.742370 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:09:53.251063 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.508 seconds
+[0m22:09:53.258322 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_SAMPLE_DATA_TPCH_SF1_marts"
+[0m22:09:53.259214 [debug] [ThreadPool]: On list_SNOWFLAKE_SAMPLE_DATA_TPCH_SF1_marts: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "snowflake_tpch_demo", "target_name": "dev", "connection_name": "list_SNOWFLAKE_SAMPLE_DATA_TPCH_SF1_marts"} */
+show objects in SNOWFLAKE_SAMPLE_DATA.TPCH_SF1_marts
+    limit 10000
+    
+;
+[0m22:09:53.339612 [debug] [ThreadPool]: Snowflake adapter: Snowflake query id: 01bf4d55-0000-9e8d-0000-0000d1896c6d
+[0m22:09:53.340381 [debug] [ThreadPool]: Snowflake adapter: Snowflake error: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+[0m22:09:53.342275 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_relations_without_caching
+[0m22:09:53.342965 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m22:09:53.344134 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_SNOWFLAKE_SAMPLE_DATA_TPCH_SF1_marts, now list_SNOWFLAKE_SAMPLE_DATA_TPCH_SF1_staging)
+[0m22:09:53.351120 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_SAMPLE_DATA_TPCH_SF1_staging"
+[0m22:09:53.351862 [debug] [ThreadPool]: On list_SNOWFLAKE_SAMPLE_DATA_TPCH_SF1_staging: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "snowflake_tpch_demo", "target_name": "dev", "connection_name": "list_SNOWFLAKE_SAMPLE_DATA_TPCH_SF1_staging"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m22:09:53.353595 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:09:53.846297 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.492 seconds
+[0m22:09:53.849858 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_SAMPLE_DATA_TPCH_SF1_staging"
+[0m22:09:53.850752 [debug] [ThreadPool]: On list_SNOWFLAKE_SAMPLE_DATA_TPCH_SF1_staging: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "snowflake_tpch_demo", "target_name": "dev", "connection_name": "list_SNOWFLAKE_SAMPLE_DATA_TPCH_SF1_staging"} */
+show objects in SNOWFLAKE_SAMPLE_DATA.TPCH_SF1_staging
+    limit 10000
+    
+;
+[0m22:09:53.923793 [debug] [ThreadPool]: Snowflake adapter: Snowflake query id: 01bf4d55-0000-9e8d-0000-0000d1896c8d
+[0m22:09:53.924680 [debug] [ThreadPool]: Snowflake adapter: Snowflake error: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+[0m22:09:53.926711 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_relations_without_caching
+[0m22:09:53.927544 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m22:09:53.939449 [debug] [Thread-2 (]: Began running node model.snowflake_tpch_demo.customer_revenue
+[0m22:09:53.941592 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_SNOWFLAKE_SAMPLE_DATA_TPCH_SF1_staging, now model.snowflake_tpch_demo.customer_revenue)
+[0m22:09:53.942471 [debug] [Thread-2 (]: Began compiling node model.snowflake_tpch_demo.customer_revenue
+[0m22:09:53.958611 [debug] [Thread-2 (]: Writing injected SQL for node "model.snowflake_tpch_demo.customer_revenue"
+[0m22:09:53.961120 [debug] [Thread-2 (]: Began executing node model.snowflake_tpch_demo.customer_revenue
+[0m22:09:53.962443 [debug] [Thread-2 (]: Finished running node model.snowflake_tpch_demo.customer_revenue
+[0m22:09:53.963432 [debug] [Thread-2 (]: Began running node model.snowflake_tpch_demo.revenue_by_year
+[0m22:09:53.966086 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.snowflake_tpch_demo.customer_revenue, now model.snowflake_tpch_demo.revenue_by_year)
+[0m22:09:53.966966 [debug] [Thread-2 (]: Began compiling node model.snowflake_tpch_demo.revenue_by_year
+[0m22:09:53.974498 [debug] [Thread-2 (]: Writing injected SQL for node "model.snowflake_tpch_demo.revenue_by_year"
+[0m22:09:53.976832 [debug] [Thread-2 (]: Began executing node model.snowflake_tpch_demo.revenue_by_year
+[0m22:09:53.977898 [debug] [Thread-2 (]: Finished running node model.snowflake_tpch_demo.revenue_by_year
+[0m22:09:53.978896 [debug] [Thread-2 (]: Began running node model.snowflake_tpch_demo.stg_orders
+[0m22:09:53.981532 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.snowflake_tpch_demo.revenue_by_year, now model.snowflake_tpch_demo.stg_orders)
+[0m22:09:53.982400 [debug] [Thread-2 (]: Began compiling node model.snowflake_tpch_demo.stg_orders
+[0m22:09:53.990047 [debug] [Thread-2 (]: Writing injected SQL for node "model.snowflake_tpch_demo.stg_orders"
+[0m22:09:53.992377 [debug] [Thread-2 (]: Began executing node model.snowflake_tpch_demo.stg_orders
+[0m22:09:53.993465 [debug] [Thread-2 (]: Finished running node model.snowflake_tpch_demo.stg_orders
+[0m22:09:53.994293 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.source_not_null_tpch_customer_c_custkey.a95b6298b5
+[0m22:09:53.997342 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.snowflake_tpch_demo.stg_orders, now test.snowflake_tpch_demo.source_not_null_tpch_customer_c_custkey.a95b6298b5)
+[0m22:09:53.999373 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.source_not_null_tpch_customer_c_custkey.a95b6298b5
+[0m22:09:54.019580 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.source_not_null_tpch_customer_c_custkey.a95b6298b5"
+[0m22:09:54.020997 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.source_not_null_tpch_customer_c_custkey.a95b6298b5
+[0m22:09:54.023221 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.source_not_null_tpch_customer_c_custkey.a95b6298b5
+[0m22:09:54.024132 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.source_not_null_tpch_lineitem_l_orderkey.9abc2badf0
+[0m22:09:54.025173 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.source_not_null_tpch_customer_c_custkey.a95b6298b5, now test.snowflake_tpch_demo.source_not_null_tpch_lineitem_l_orderkey.9abc2badf0)
+[0m22:09:54.027111 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.source_not_null_tpch_lineitem_l_orderkey.9abc2badf0
+[0m22:09:54.035807 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.source_not_null_tpch_lineitem_l_orderkey.9abc2badf0"
+[0m22:09:54.038194 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.source_not_null_tpch_lineitem_l_orderkey.9abc2badf0
+[0m22:09:54.039434 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.source_not_null_tpch_lineitem_l_orderkey.9abc2badf0
+[0m22:09:54.040516 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.source_not_null_tpch_orders_o_custkey.33f6cc8f42
+[0m22:09:54.042739 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.source_not_null_tpch_lineitem_l_orderkey.9abc2badf0, now test.snowflake_tpch_demo.source_not_null_tpch_orders_o_custkey.33f6cc8f42)
+[0m22:09:54.043518 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.source_not_null_tpch_orders_o_custkey.33f6cc8f42
+[0m22:09:54.054546 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.source_not_null_tpch_orders_o_custkey.33f6cc8f42"
+[0m22:09:54.055853 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.source_not_null_tpch_orders_o_custkey.33f6cc8f42
+[0m22:09:54.058135 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.source_not_null_tpch_orders_o_custkey.33f6cc8f42
+[0m22:09:54.059021 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.source_not_null_tpch_orders_o_orderkey.ebd571817b
+[0m22:09:54.061159 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.source_not_null_tpch_orders_o_custkey.33f6cc8f42, now test.snowflake_tpch_demo.source_not_null_tpch_orders_o_orderkey.ebd571817b)
+[0m22:09:54.062169 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.source_not_null_tpch_orders_o_orderkey.ebd571817b
+[0m22:09:54.070934 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.source_not_null_tpch_orders_o_orderkey.ebd571817b"
+[0m22:09:54.073463 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.source_not_null_tpch_orders_o_orderkey.ebd571817b
+[0m22:09:54.074724 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.source_not_null_tpch_orders_o_orderkey.ebd571817b
+[0m22:09:54.076932 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.source_unique_tpch_customer_c_custkey.048e97fc25
+[0m22:09:54.078261 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.source_not_null_tpch_orders_o_orderkey.ebd571817b, now test.snowflake_tpch_demo.source_unique_tpch_customer_c_custkey.048e97fc25)
+[0m22:09:54.080374 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.source_unique_tpch_customer_c_custkey.048e97fc25
+[0m22:09:54.092078 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.source_unique_tpch_customer_c_custkey.048e97fc25"
+[0m22:09:54.093351 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.source_unique_tpch_customer_c_custkey.048e97fc25
+[0m22:09:54.095448 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.source_unique_tpch_customer_c_custkey.048e97fc25
+[0m22:09:54.096481 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.source_unique_tpch_orders_o_orderkey.374f048af2
+[0m22:09:54.097598 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.source_unique_tpch_customer_c_custkey.048e97fc25, now test.snowflake_tpch_demo.source_unique_tpch_orders_o_orderkey.374f048af2)
+[0m22:09:54.099493 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.source_unique_tpch_orders_o_orderkey.374f048af2
+[0m22:09:54.107903 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.source_unique_tpch_orders_o_orderkey.374f048af2"
+[0m22:09:54.109213 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.source_unique_tpch_orders_o_orderkey.374f048af2
+[0m22:09:54.111466 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.source_unique_tpch_orders_o_orderkey.374f048af2
+[0m22:09:54.112425 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_customer_revenue_customer_name.f0984af1ed
+[0m22:09:54.113620 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.source_unique_tpch_orders_o_orderkey.374f048af2, now test.snowflake_tpch_demo.not_null_customer_revenue_customer_name.f0984af1ed)
+[0m22:09:54.115550 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_customer_revenue_customer_name.f0984af1ed
+[0m22:09:54.124011 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_customer_revenue_customer_name.f0984af1ed"
+[0m22:09:54.126434 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_customer_revenue_customer_name.f0984af1ed
+[0m22:09:54.127702 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_customer_revenue_customer_name.f0984af1ed
+[0m22:09:54.128652 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_customer_revenue_o_custkey.fef8bd39f8
+[0m22:09:54.130935 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_customer_revenue_customer_name.f0984af1ed, now test.snowflake_tpch_demo.not_null_customer_revenue_o_custkey.fef8bd39f8)
+[0m22:09:54.131868 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_customer_revenue_o_custkey.fef8bd39f8
+[0m22:09:54.143541 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_customer_revenue_o_custkey.fef8bd39f8"
+[0m22:09:54.145953 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_customer_revenue_o_custkey.fef8bd39f8
+[0m22:09:54.147174 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_customer_revenue_o_custkey.fef8bd39f8
+[0m22:09:54.148179 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_customer_revenue_total_orders.02ef223b79
+[0m22:09:54.150493 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_customer_revenue_o_custkey.fef8bd39f8, now test.snowflake_tpch_demo.not_null_customer_revenue_total_orders.02ef223b79)
+[0m22:09:54.151425 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_customer_revenue_total_orders.02ef223b79
+[0m22:09:54.159614 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_customer_revenue_total_orders.02ef223b79"
+[0m22:09:54.161948 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_customer_revenue_total_orders.02ef223b79
+[0m22:09:54.163094 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_customer_revenue_total_orders.02ef223b79
+[0m22:09:54.165074 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_customer_revenue_total_revenue.79c910a2f8
+[0m22:09:54.166267 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_customer_revenue_total_orders.02ef223b79, now test.snowflake_tpch_demo.not_null_customer_revenue_total_revenue.79c910a2f8)
+[0m22:09:54.167015 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_customer_revenue_total_revenue.79c910a2f8
+[0m22:09:54.176445 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_customer_revenue_total_revenue.79c910a2f8"
+[0m22:09:54.177818 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_customer_revenue_total_revenue.79c910a2f8
+[0m22:09:54.180051 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_customer_revenue_total_revenue.79c910a2f8
+[0m22:09:54.181177 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.unique_customer_revenue_o_custkey.67287624df
+[0m22:09:54.182339 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_customer_revenue_total_revenue.79c910a2f8, now test.snowflake_tpch_demo.unique_customer_revenue_o_custkey.67287624df)
+[0m22:09:54.184220 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.unique_customer_revenue_o_custkey.67287624df
+[0m22:09:54.192413 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.unique_customer_revenue_o_custkey.67287624df"
+[0m22:09:54.193656 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.unique_customer_revenue_o_custkey.67287624df
+[0m22:09:54.195915 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.unique_customer_revenue_o_custkey.67287624df
+[0m22:09:54.196993 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_revenue_by_year_order_year.e1df148836
+[0m22:09:54.198033 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.unique_customer_revenue_o_custkey.67287624df, now test.snowflake_tpch_demo.not_null_revenue_by_year_order_year.e1df148836)
+[0m22:09:54.199905 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_revenue_by_year_order_year.e1df148836
+[0m22:09:54.208561 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_revenue_by_year_order_year.e1df148836"
+[0m22:09:54.210943 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_revenue_by_year_order_year.e1df148836
+[0m22:09:54.212156 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_revenue_by_year_order_year.e1df148836
+[0m22:09:54.213087 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_revenue_by_year_total_orders.2a5c4d6ea0
+[0m22:09:54.215274 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_revenue_by_year_order_year.e1df148836, now test.snowflake_tpch_demo.not_null_revenue_by_year_total_orders.2a5c4d6ea0)
+[0m22:09:54.216142 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_revenue_by_year_total_orders.2a5c4d6ea0
+[0m22:09:54.227898 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_revenue_by_year_total_orders.2a5c4d6ea0"
+[0m22:09:54.230361 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_revenue_by_year_total_orders.2a5c4d6ea0
+[0m22:09:54.231551 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_revenue_by_year_total_orders.2a5c4d6ea0
+[0m22:09:54.232480 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_revenue_by_year_total_revenue.1661877bbb
+[0m22:09:54.234674 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_revenue_by_year_total_orders.2a5c4d6ea0, now test.snowflake_tpch_demo.not_null_revenue_by_year_total_revenue.1661877bbb)
+[0m22:09:54.235475 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_revenue_by_year_total_revenue.1661877bbb
+[0m22:09:54.243873 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_revenue_by_year_total_revenue.1661877bbb"
+[0m22:09:54.246291 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_revenue_by_year_total_revenue.1661877bbb
+[0m22:09:54.247395 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_revenue_by_year_total_revenue.1661877bbb
+[0m22:09:54.249336 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_stg_orders_customer_name.1440ea4abd
+[0m22:09:54.250485 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_revenue_by_year_total_revenue.1661877bbb, now test.snowflake_tpch_demo.not_null_stg_orders_customer_name.1440ea4abd)
+[0m22:09:54.251304 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_stg_orders_customer_name.1440ea4abd
+[0m22:09:54.259450 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_stg_orders_customer_name.1440ea4abd"
+[0m22:09:54.261986 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_stg_orders_customer_name.1440ea4abd
+[0m22:09:54.263261 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_stg_orders_customer_name.1440ea4abd
+[0m22:09:54.265257 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_stg_orders_o_custkey.d1748b820c
+[0m22:09:54.266400 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_stg_orders_customer_name.1440ea4abd, now test.snowflake_tpch_demo.not_null_stg_orders_o_custkey.d1748b820c)
+[0m22:09:54.267236 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_stg_orders_o_custkey.d1748b820c
+[0m22:09:54.276707 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_stg_orders_o_custkey.d1748b820c"
+[0m22:09:54.277988 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_stg_orders_o_custkey.d1748b820c
+[0m22:09:54.280234 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_stg_orders_o_custkey.d1748b820c
+[0m22:09:54.281258 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_stg_orders_o_orderkey.6f73f629f3
+[0m22:09:54.282359 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_stg_orders_o_custkey.d1748b820c, now test.snowflake_tpch_demo.not_null_stg_orders_o_orderkey.6f73f629f3)
+[0m22:09:54.284254 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_stg_orders_o_orderkey.6f73f629f3
+[0m22:09:54.292706 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_stg_orders_o_orderkey.6f73f629f3"
+[0m22:09:54.293913 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_stg_orders_o_orderkey.6f73f629f3
+[0m22:09:54.296174 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_stg_orders_o_orderkey.6f73f629f3
+[0m22:09:54.297165 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_stg_orders_order_year.d038e0488a
+[0m22:09:54.299317 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_stg_orders_o_orderkey.6f73f629f3, now test.snowflake_tpch_demo.not_null_stg_orders_order_year.d038e0488a)
+[0m22:09:54.300194 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_stg_orders_order_year.d038e0488a
+[0m22:09:54.311734 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_stg_orders_order_year.d038e0488a"
+[0m22:09:54.313045 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_stg_orders_order_year.d038e0488a
+[0m22:09:54.315333 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_stg_orders_order_year.d038e0488a
+[0m22:09:54.316353 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_stg_orders_total_price.cdb764cd1b
+[0m22:09:54.317372 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_stg_orders_order_year.d038e0488a, now test.snowflake_tpch_demo.not_null_stg_orders_total_price.cdb764cd1b)
+[0m22:09:54.319568 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_stg_orders_total_price.cdb764cd1b
+[0m22:09:54.327865 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_stg_orders_total_price.cdb764cd1b"
+[0m22:09:54.330149 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_stg_orders_total_price.cdb764cd1b
+[0m22:09:54.331425 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_stg_orders_total_price.cdb764cd1b
+[0m22:09:54.332381 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.unique_stg_orders_o_orderkey.2ebe3d4c35
+[0m22:09:54.334544 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_stg_orders_total_price.cdb764cd1b, now test.snowflake_tpch_demo.unique_stg_orders_o_orderkey.2ebe3d4c35)
+[0m22:09:54.335420 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.unique_stg_orders_o_orderkey.2ebe3d4c35
+[0m22:09:54.343864 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.unique_stg_orders_o_orderkey.2ebe3d4c35"
+[0m22:09:54.346237 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.unique_stg_orders_o_orderkey.2ebe3d4c35
+[0m22:09:54.347266 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.unique_stg_orders_o_orderkey.2ebe3d4c35
+[0m22:09:54.351604 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m22:09:54.353416 [debug] [Dummy-1   ]: Connection 'test.snowflake_tpch_demo.unique_stg_orders_o_orderkey.2ebe3d4c35' was properly closed.
+[0m22:09:54.357780 [debug] [Dummy-1   ]: Command end result
+[0m22:09:54.399994 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m22:09:54.404317 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m22:09:54.416248 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m22:09:54.420793 [debug] [Dummy-1   ]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 6.422922, "process_in_blocks": "0", "process_kernel_time": 1.25, "process_mem_max_rss": "479036", "process_out_blocks": "0", "process_user_time": 9.32}
+[0m22:09:54.422944 [debug] [Dummy-1   ]: Command `cli compile` succeeded at 22:09:54.422496 after 6.43 seconds
+[0m22:09:54.423950 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 22:11:03.306230 | c93c83df-b41b-4a7e-8409-92d9f659e563 ==============================
+[0m22:11:03.306230 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m22:11:03.308726 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/tmp/dbt/', 'log_path': '/tmp/dbt/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt ', 'introspect': 'True', 'target_path': '/tmp/dbt/target/', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'False'}
+[0m22:11:03.771601 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m22:11:05.039833 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m22:11:05.414471 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m22:11:05.416460 [debug] [Dummy-1   ]: Partial parsing enabled, no changes found, skipping parsing
+[0m22:11:05.748121 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m22:11:05.752429 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m22:11:05.817764 [info ] [Dummy-1   ]: Found 3 models, 20 data tests, 3 sources, 474 macros
+[0m22:11:05.823585 [info ] [Dummy-1   ]: 
+[0m22:11:05.824676 [info ] [Dummy-1   ]: Concurrency: 1 threads (target='dev')
+[0m22:11:05.825609 [info ] [Dummy-1   ]: 
+[0m22:11:05.828054 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m22:11:05.837232 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SNOWFLAKE_SAMPLE_DATA_TPCH_SF1_staging'
+[0m22:11:06.074089 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_SAMPLE_DATA_TPCH_SF1_staging"
+[0m22:11:06.075126 [debug] [ThreadPool]: On list_SNOWFLAKE_SAMPLE_DATA_TPCH_SF1_staging: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "snowflake_tpch_demo", "target_name": "dev", "connection_name": "list_SNOWFLAKE_SAMPLE_DATA_TPCH_SF1_staging"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m22:11:06.075940 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:11:06.554501 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.477 seconds
+[0m22:11:06.562410 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_SAMPLE_DATA_TPCH_SF1_staging"
+[0m22:11:06.563288 [debug] [ThreadPool]: On list_SNOWFLAKE_SAMPLE_DATA_TPCH_SF1_staging: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "snowflake_tpch_demo", "target_name": "dev", "connection_name": "list_SNOWFLAKE_SAMPLE_DATA_TPCH_SF1_staging"} */
+show objects in SNOWFLAKE_SAMPLE_DATA.TPCH_SF1_staging
+    limit 10000
+    
+;
+[0m22:11:06.639566 [debug] [ThreadPool]: Snowflake adapter: Snowflake query id: 01bf4d57-0000-9e8b-0000-0000d189788d
+[0m22:11:06.640628 [debug] [ThreadPool]: Snowflake adapter: Snowflake error: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+[0m22:11:06.642890 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_relations_without_caching
+[0m22:11:06.643811 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m22:11:06.646437 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_SNOWFLAKE_SAMPLE_DATA_TPCH_SF1_staging, now list_SNOWFLAKE_SAMPLE_DATA_TPCH_SF1_marts)
+[0m22:11:06.652929 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_SAMPLE_DATA_TPCH_SF1_marts"
+[0m22:11:06.655070 [debug] [ThreadPool]: On list_SNOWFLAKE_SAMPLE_DATA_TPCH_SF1_marts: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "snowflake_tpch_demo", "target_name": "dev", "connection_name": "list_SNOWFLAKE_SAMPLE_DATA_TPCH_SF1_marts"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m22:11:06.655995 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:11:07.125034 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.469 seconds
+[0m22:11:07.128814 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_SAMPLE_DATA_TPCH_SF1_marts"
+[0m22:11:07.129698 [debug] [ThreadPool]: On list_SNOWFLAKE_SAMPLE_DATA_TPCH_SF1_marts: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "snowflake_tpch_demo", "target_name": "dev", "connection_name": "list_SNOWFLAKE_SAMPLE_DATA_TPCH_SF1_marts"} */
+show objects in SNOWFLAKE_SAMPLE_DATA.TPCH_SF1_marts
+    limit 10000
+    
+;
+[0m22:11:07.196659 [debug] [ThreadPool]: Snowflake adapter: Snowflake query id: 01bf4d57-0000-9e8b-0000-0000d18978ad
+[0m22:11:07.197579 [debug] [ThreadPool]: Snowflake adapter: Snowflake error: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+[0m22:11:07.198496 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_relations_without_caching
+[0m22:11:07.200374 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m22:11:07.212736 [debug] [Thread-2 (]: Began running node model.snowflake_tpch_demo.customer_revenue
+[0m22:11:07.213852 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_SNOWFLAKE_SAMPLE_DATA_TPCH_SF1_marts, now model.snowflake_tpch_demo.customer_revenue)
+[0m22:11:07.215919 [debug] [Thread-2 (]: Began compiling node model.snowflake_tpch_demo.customer_revenue
+[0m22:11:07.231878 [debug] [Thread-2 (]: Writing injected SQL for node "model.snowflake_tpch_demo.customer_revenue"
+[0m22:11:07.233442 [debug] [Thread-2 (]: Began executing node model.snowflake_tpch_demo.customer_revenue
+[0m22:11:07.235788 [debug] [Thread-2 (]: Finished running node model.snowflake_tpch_demo.customer_revenue
+[0m22:11:07.236795 [debug] [Thread-2 (]: Began running node model.snowflake_tpch_demo.revenue_by_year
+[0m22:11:07.239691 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.snowflake_tpch_demo.customer_revenue, now model.snowflake_tpch_demo.revenue_by_year)
+[0m22:11:07.240742 [debug] [Thread-2 (]: Began compiling node model.snowflake_tpch_demo.revenue_by_year
+[0m22:11:07.251753 [debug] [Thread-2 (]: Writing injected SQL for node "model.snowflake_tpch_demo.revenue_by_year"
+[0m22:11:07.254125 [debug] [Thread-2 (]: Began executing node model.snowflake_tpch_demo.revenue_by_year
+[0m22:11:07.255316 [debug] [Thread-2 (]: Finished running node model.snowflake_tpch_demo.revenue_by_year
+[0m22:11:07.256277 [debug] [Thread-2 (]: Began running node model.snowflake_tpch_demo.stg_orders
+[0m22:11:07.258992 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.snowflake_tpch_demo.revenue_by_year, now model.snowflake_tpch_demo.stg_orders)
+[0m22:11:07.259900 [debug] [Thread-2 (]: Began compiling node model.snowflake_tpch_demo.stg_orders
+[0m22:11:07.269416 [debug] [Thread-2 (]: Writing injected SQL for node "model.snowflake_tpch_demo.stg_orders"
+[0m22:11:07.270857 [debug] [Thread-2 (]: Began executing node model.snowflake_tpch_demo.stg_orders
+[0m22:11:07.272033 [debug] [Thread-2 (]: Finished running node model.snowflake_tpch_demo.stg_orders
+[0m22:11:07.274081 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.source_not_null_tpch_customer_c_custkey.a95b6298b5
+[0m22:11:07.277135 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.snowflake_tpch_demo.stg_orders, now test.snowflake_tpch_demo.source_not_null_tpch_customer_c_custkey.a95b6298b5)
+[0m22:11:07.278149 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.source_not_null_tpch_customer_c_custkey.a95b6298b5
+[0m22:11:07.299359 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.source_not_null_tpch_customer_c_custkey.a95b6298b5"
+[0m22:11:07.301968 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.source_not_null_tpch_customer_c_custkey.a95b6298b5
+[0m22:11:07.304555 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.source_not_null_tpch_customer_c_custkey.a95b6298b5
+[0m22:11:07.305728 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.source_not_null_tpch_lineitem_l_orderkey.9abc2badf0
+[0m22:11:07.308134 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.source_not_null_tpch_customer_c_custkey.a95b6298b5, now test.snowflake_tpch_demo.source_not_null_tpch_lineitem_l_orderkey.9abc2badf0)
+[0m22:11:07.309229 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.source_not_null_tpch_lineitem_l_orderkey.9abc2badf0
+[0m22:11:07.320042 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.source_not_null_tpch_lineitem_l_orderkey.9abc2badf0"
+[0m22:11:07.321615 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.source_not_null_tpch_lineitem_l_orderkey.9abc2badf0
+[0m22:11:07.323986 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.source_not_null_tpch_lineitem_l_orderkey.9abc2badf0
+[0m22:11:07.325059 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.source_not_null_tpch_orders_o_custkey.33f6cc8f42
+[0m22:11:07.327319 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.source_not_null_tpch_lineitem_l_orderkey.9abc2badf0, now test.snowflake_tpch_demo.source_not_null_tpch_orders_o_custkey.33f6cc8f42)
+[0m22:11:07.328346 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.source_not_null_tpch_orders_o_custkey.33f6cc8f42
+[0m22:11:07.338891 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.source_not_null_tpch_orders_o_custkey.33f6cc8f42"
+[0m22:11:07.340407 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.source_not_null_tpch_orders_o_custkey.33f6cc8f42
+[0m22:11:07.342828 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.source_not_null_tpch_orders_o_custkey.33f6cc8f42
+[0m22:11:07.343867 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.source_not_null_tpch_orders_o_orderkey.ebd571817b
+[0m22:11:07.345176 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.source_not_null_tpch_orders_o_custkey.33f6cc8f42, now test.snowflake_tpch_demo.source_not_null_tpch_orders_o_orderkey.ebd571817b)
+[0m22:11:07.347331 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.source_not_null_tpch_orders_o_orderkey.ebd571817b
+[0m22:11:07.359641 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.source_not_null_tpch_orders_o_orderkey.ebd571817b"
+[0m22:11:07.362231 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.source_not_null_tpch_orders_o_orderkey.ebd571817b
+[0m22:11:07.363540 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.source_not_null_tpch_orders_o_orderkey.ebd571817b
+[0m22:11:07.365787 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.source_unique_tpch_customer_c_custkey.048e97fc25
+[0m22:11:07.367148 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.source_not_null_tpch_orders_o_orderkey.ebd571817b, now test.snowflake_tpch_demo.source_unique_tpch_customer_c_custkey.048e97fc25)
+[0m22:11:07.368111 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.source_unique_tpch_customer_c_custkey.048e97fc25
+[0m22:11:07.381860 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.source_unique_tpch_customer_c_custkey.048e97fc25"
+[0m22:11:07.383358 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.source_unique_tpch_customer_c_custkey.048e97fc25
+[0m22:11:07.385822 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.source_unique_tpch_customer_c_custkey.048e97fc25
+[0m22:11:07.386893 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.source_unique_tpch_orders_o_orderkey.374f048af2
+[0m22:11:07.389202 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.source_unique_tpch_customer_c_custkey.048e97fc25, now test.snowflake_tpch_demo.source_unique_tpch_orders_o_orderkey.374f048af2)
+[0m22:11:07.390217 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.source_unique_tpch_orders_o_orderkey.374f048af2
+[0m22:11:07.399044 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.source_unique_tpch_orders_o_orderkey.374f048af2"
+[0m22:11:07.402802 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.source_unique_tpch_orders_o_orderkey.374f048af2
+[0m22:11:07.405206 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.source_unique_tpch_orders_o_orderkey.374f048af2
+[0m22:11:07.406273 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_customer_revenue_customer_name.f0984af1ed
+[0m22:11:07.408707 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.source_unique_tpch_orders_o_orderkey.374f048af2, now test.snowflake_tpch_demo.not_null_customer_revenue_customer_name.f0984af1ed)
+[0m22:11:07.409703 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_customer_revenue_customer_name.f0984af1ed
+[0m22:11:07.420116 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_customer_revenue_customer_name.f0984af1ed"
+[0m22:11:07.421668 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_customer_revenue_customer_name.f0984af1ed
+[0m22:11:07.424114 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_customer_revenue_customer_name.f0984af1ed
+[0m22:11:07.425162 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_customer_revenue_o_custkey.fef8bd39f8
+[0m22:11:07.427632 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_customer_revenue_customer_name.f0984af1ed, now test.snowflake_tpch_demo.not_null_customer_revenue_o_custkey.fef8bd39f8)
+[0m22:11:07.428819 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_customer_revenue_o_custkey.fef8bd39f8
+[0m22:11:07.438734 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_customer_revenue_o_custkey.fef8bd39f8"
+[0m22:11:07.440180 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_customer_revenue_o_custkey.fef8bd39f8
+[0m22:11:07.441454 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_customer_revenue_o_custkey.fef8bd39f8
+[0m22:11:07.443603 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_customer_revenue_total_orders.02ef223b79
+[0m22:11:07.444858 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_customer_revenue_o_custkey.fef8bd39f8, now test.snowflake_tpch_demo.not_null_customer_revenue_total_orders.02ef223b79)
+[0m22:11:07.446870 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_customer_revenue_total_orders.02ef223b79
+[0m22:11:07.459217 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_customer_revenue_total_orders.02ef223b79"
+[0m22:11:07.460626 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_customer_revenue_total_orders.02ef223b79
+[0m22:11:07.463036 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_customer_revenue_total_orders.02ef223b79
+[0m22:11:07.464100 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_customer_revenue_total_revenue.79c910a2f8
+[0m22:11:07.466338 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_customer_revenue_total_orders.02ef223b79, now test.snowflake_tpch_demo.not_null_customer_revenue_total_revenue.79c910a2f8)
+[0m22:11:07.467220 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_customer_revenue_total_revenue.79c910a2f8
+[0m22:11:07.477190 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_customer_revenue_total_revenue.79c910a2f8"
+[0m22:11:07.478511 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_customer_revenue_total_revenue.79c910a2f8
+[0m22:11:07.479652 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_customer_revenue_total_revenue.79c910a2f8
+[0m22:11:07.481733 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.unique_customer_revenue_o_custkey.67287624df
+[0m22:11:07.482949 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_customer_revenue_total_revenue.79c910a2f8, now test.snowflake_tpch_demo.unique_customer_revenue_o_custkey.67287624df)
+[0m22:11:07.484985 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.unique_customer_revenue_o_custkey.67287624df
+[0m22:11:07.494255 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.unique_customer_revenue_o_custkey.67287624df"
+[0m22:11:07.496925 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.unique_customer_revenue_o_custkey.67287624df
+[0m22:11:07.498361 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.unique_customer_revenue_o_custkey.67287624df
+[0m22:11:07.500587 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_revenue_by_year_order_year.e1df148836
+[0m22:11:07.501900 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.unique_customer_revenue_o_custkey.67287624df, now test.snowflake_tpch_demo.not_null_revenue_by_year_order_year.e1df148836)
+[0m22:11:07.502849 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_revenue_by_year_order_year.e1df148836
+[0m22:11:07.512921 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_revenue_by_year_order_year.e1df148836"
+[0m22:11:07.514278 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_revenue_by_year_order_year.e1df148836
+[0m22:11:07.516641 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_revenue_by_year_order_year.e1df148836
+[0m22:11:07.517663 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_revenue_by_year_total_orders.2a5c4d6ea0
+[0m22:11:07.520067 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_revenue_by_year_order_year.e1df148836, now test.snowflake_tpch_demo.not_null_revenue_by_year_total_orders.2a5c4d6ea0)
+[0m22:11:07.520950 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_revenue_by_year_total_orders.2a5c4d6ea0
+[0m22:11:07.533146 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_revenue_by_year_total_orders.2a5c4d6ea0"
+[0m22:11:07.535690 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_revenue_by_year_total_orders.2a5c4d6ea0
+[0m22:11:07.536852 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_revenue_by_year_total_orders.2a5c4d6ea0
+[0m22:11:07.538919 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_revenue_by_year_total_revenue.1661877bbb
+[0m22:11:07.540228 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_revenue_by_year_total_orders.2a5c4d6ea0, now test.snowflake_tpch_demo.not_null_revenue_by_year_total_revenue.1661877bbb)
+[0m22:11:07.541146 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_revenue_by_year_total_revenue.1661877bbb
+[0m22:11:07.551195 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_revenue_by_year_total_revenue.1661877bbb"
+[0m22:11:07.552476 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_revenue_by_year_total_revenue.1661877bbb
+[0m22:11:07.554744 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_revenue_by_year_total_revenue.1661877bbb
+[0m22:11:07.555902 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_stg_orders_customer_name.1440ea4abd
+[0m22:11:07.558321 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_revenue_by_year_total_revenue.1661877bbb, now test.snowflake_tpch_demo.not_null_stg_orders_customer_name.1440ea4abd)
+[0m22:11:07.559284 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_stg_orders_customer_name.1440ea4abd
+[0m22:11:07.568436 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_stg_orders_customer_name.1440ea4abd"
+[0m22:11:07.570813 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_stg_orders_customer_name.1440ea4abd
+[0m22:11:07.571987 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_stg_orders_customer_name.1440ea4abd
+[0m22:11:07.574054 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_stg_orders_o_custkey.d1748b820c
+[0m22:11:07.575272 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_stg_orders_customer_name.1440ea4abd, now test.snowflake_tpch_demo.not_null_stg_orders_o_custkey.d1748b820c)
+[0m22:11:07.577156 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_stg_orders_o_custkey.d1748b820c
+[0m22:11:07.586019 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_stg_orders_o_custkey.d1748b820c"
+[0m22:11:07.587503 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_stg_orders_o_custkey.d1748b820c
+[0m22:11:07.589943 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_stg_orders_o_custkey.d1748b820c
+[0m22:11:07.591112 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_stg_orders_o_orderkey.6f73f629f3
+[0m22:11:07.593319 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_stg_orders_o_custkey.d1748b820c, now test.snowflake_tpch_demo.not_null_stg_orders_o_orderkey.6f73f629f3)
+[0m22:11:07.594183 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_stg_orders_o_orderkey.6f73f629f3
+[0m22:11:07.604621 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_stg_orders_o_orderkey.6f73f629f3"
+[0m22:11:07.605906 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_stg_orders_o_orderkey.6f73f629f3
+[0m22:11:07.608069 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_stg_orders_o_orderkey.6f73f629f3
+[0m22:11:07.608997 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_stg_orders_order_year.d038e0488a
+[0m22:11:07.610118 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_stg_orders_o_orderkey.6f73f629f3, now test.snowflake_tpch_demo.not_null_stg_orders_order_year.d038e0488a)
+[0m22:11:07.612003 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_stg_orders_order_year.d038e0488a
+[0m22:11:07.623496 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_stg_orders_order_year.d038e0488a"
+[0m22:11:07.624926 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_stg_orders_order_year.d038e0488a
+[0m22:11:07.626015 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_stg_orders_order_year.d038e0488a
+[0m22:11:07.628048 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_stg_orders_total_price.cdb764cd1b
+[0m22:11:07.629190 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_stg_orders_order_year.d038e0488a, now test.snowflake_tpch_demo.not_null_stg_orders_total_price.cdb764cd1b)
+[0m22:11:07.631145 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_stg_orders_total_price.cdb764cd1b
+[0m22:11:07.640545 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_stg_orders_total_price.cdb764cd1b"
+[0m22:11:07.642907 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_stg_orders_total_price.cdb764cd1b
+[0m22:11:07.644149 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_stg_orders_total_price.cdb764cd1b
+[0m22:11:07.645156 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.unique_stg_orders_o_orderkey.2ebe3d4c35
+[0m22:11:07.647603 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_stg_orders_total_price.cdb764cd1b, now test.snowflake_tpch_demo.unique_stg_orders_o_orderkey.2ebe3d4c35)
+[0m22:11:07.648536 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.unique_stg_orders_o_orderkey.2ebe3d4c35
+[0m22:11:07.658298 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.unique_stg_orders_o_orderkey.2ebe3d4c35"
+[0m22:11:07.659635 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.unique_stg_orders_o_orderkey.2ebe3d4c35
+[0m22:11:07.662052 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.unique_stg_orders_o_orderkey.2ebe3d4c35
+[0m22:11:07.666417 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m22:11:07.667197 [debug] [Dummy-1   ]: Connection 'test.snowflake_tpch_demo.unique_stg_orders_o_orderkey.2ebe3d4c35' was properly closed.
+[0m22:11:07.671548 [debug] [Dummy-1   ]: Command end result
+[0m22:11:07.715839 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m22:11:07.719932 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m22:11:07.732175 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m22:11:07.735919 [debug] [Dummy-1   ]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 4.5486436, "process_in_blocks": "0", "process_kernel_time": 1.21, "process_mem_max_rss": "439456", "process_out_blocks": "0", "process_user_time": 8.28}
+[0m22:11:07.736894 [debug] [Dummy-1   ]: Command `cli compile` succeeded at 22:11:07.736509 after 4.55 seconds
+[0m22:11:07.738679 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 22:12:13.736880 | 861301d0-916d-4155-88ba-0e512acd1a80 ==============================
+[0m22:12:13.736880 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m22:12:13.738194 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/tmp/dbt/logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt ', 'target_path': '/tmp/dbt/target/', 'log_format': 'default', 'send_anonymous_usage_stats': 'False'}
+[0m22:12:14.170880 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m22:12:15.379770 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m22:12:15.582445 [info ] [Dummy-1   ]: Unable to do partial parsing because profile has changed
+[0m22:12:18.059362 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m22:12:18.063390 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m22:12:18.122759 [info ] [Dummy-1   ]: Found 3 models, 20 data tests, 3 sources, 474 macros
+[0m22:12:18.128284 [info ] [Dummy-1   ]: 
+[0m22:12:18.129165 [info ] [Dummy-1   ]: Concurrency: 1 threads (target='dev')
+[0m22:12:18.129966 [info ] [Dummy-1   ]: 
+[0m22:12:18.132222 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m22:12:18.140523 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DEMO_DB_TPCH_SF1_marts'
+[0m22:12:18.371895 [debug] [ThreadPool]: Using snowflake connection "list_DEMO_DB_TPCH_SF1_marts"
+[0m22:12:18.372785 [debug] [ThreadPool]: On list_DEMO_DB_TPCH_SF1_marts: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "snowflake_tpch_demo", "target_name": "dev", "connection_name": "list_DEMO_DB_TPCH_SF1_marts"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m22:12:18.374569 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:12:18.710226 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "snowflake_tpch_demo", "target_name": "dev", "connection_name": "list_DEMO_DB_TPCH_SF1_marts"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m22:12:18.711097 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m22:12:18.712930 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:12:19.049301 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_relations_without_caching
+[0m22:12:19.051197 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m22:12:19.052066 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:12:19.367882 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_DEMO_DB_TPCH_SF1_marts, now list_DEMO_DB_TPCH_SF1_staging)
+[0m22:12:19.374867 [debug] [ThreadPool]: Using snowflake connection "list_DEMO_DB_TPCH_SF1_staging"
+[0m22:12:19.375769 [debug] [ThreadPool]: On list_DEMO_DB_TPCH_SF1_staging: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "snowflake_tpch_demo", "target_name": "dev", "connection_name": "list_DEMO_DB_TPCH_SF1_staging"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m22:12:19.376580 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:12:19.675742 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "snowflake_tpch_demo", "target_name": "dev", "connection_name": "list_DEMO_DB_TPCH_SF1_staging"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m22:12:19.676550 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m22:12:19.678301 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:12:19.976135 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_relations_without_caching
+[0m22:12:19.976979 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m22:12:19.978786 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:12:20.267809 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m22:12:20.268646 [debug] [Dummy-1   ]: Connection 'list_DEMO_DB_TPCH_SF1_staging' was properly closed.
+[0m22:12:20.270770 [error] [Dummy-1   ]: Encountered an error:
+Failed to use schema TPCH_SF1: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+[0m22:12:20.285828 [error] [Dummy-1   ]: Traceback (most recent call last):
+  File "_udf_code.py", line 404, in new_open_method
+    new_session.use_schema(creds.schema)
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/snowpark/session.py", line 3927, in use_schema
+    self._use_object(schema, "schema")
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/snowpark/session.py", line 3980, in _use_object
+    self._run_query(query)
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/snowpark/session.py", line 2837, in _run_query
+    return self._conn.run_query(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 133, in wrap
+    raise ex
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 127, in wrap
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 520, in run_query
+    raise ex
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 505, in run_query
+    results_cursor = self.execute_and_notify_query_listener(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 446, in execute_and_notify_query_listener
+    raise ex
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 437, in execute_and_notify_query_listener
+    results_cursor = self._cursor.execute(query, **kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "_udf_code.py", line 124, in wrapper
+    return original_execute(self, sql, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/connector/cursor.py", line 1092, in execute
+    Error.errorhandler_wrapper(
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/connector/errors.py", line 232, in errorhandler_wrapper
+    handed_over = Error.hand_to_other_handler(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/connector/errors.py", line 287, in hand_to_other_handler
+    cursor.errorhandler(connection, cursor, error_class, error_value)
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/connector/errors.py", line 165, in default_errorhandler
+    raise error_class(
+snowflake.connector.errors.ProgrammingError: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/adapters/snowflake/connections.py", line 317, in exception_handler
+    yield
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/adapters/sql/connections.py", line 146, in add_query
+    cursor = connection.handle.cursor()
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/adapters/contracts/connection.py", line 96, in handle
+    self._handle.resolve(self)
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/adapters/contracts/connection.py", line 120, in resolve
+    return self.opener(connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "_udf_code.py", line 406, in new_open_method
+    raise ValueError(f"Failed to use schema {creds.schema}: {str(e)}")
+ValueError: Failed to use schema TPCH_SF1: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "_udf_code.py", line 404, in new_open_method
+    new_session.use_schema(creds.schema)
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/snowpark/session.py", line 3927, in use_schema
+    self._use_object(schema, "schema")
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/snowpark/session.py", line 3980, in _use_object
+    self._run_query(query)
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/snowpark/session.py", line 2837, in _run_query
+    return self._conn.run_query(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 133, in wrap
+    raise ex
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 127, in wrap
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 520, in run_query
+    raise ex
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 505, in run_query
+    results_cursor = self.execute_and_notify_query_listener(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 446, in execute_and_notify_query_listener
+    raise ex
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 437, in execute_and_notify_query_listener
+    results_cursor = self._cursor.execute(query, **kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "_udf_code.py", line 124, in wrapper
+    return original_execute(self, sql, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/connector/cursor.py", line 1092, in execute
+    Error.errorhandler_wrapper(
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/connector/errors.py", line 232, in errorhandler_wrapper
+    handed_over = Error.hand_to_other_handler(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/connector/errors.py", line 287, in hand_to_other_handler
+    cursor.errorhandler(connection, cursor, error_class, error_value)
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/connector/errors.py", line 165, in default_errorhandler
+    raise error_class(
+snowflake.connector.errors.ProgrammingError: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/adapters/snowflake/connections.py", line 317, in exception_handler
+    yield
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/adapters/base/impl.py", line 1276, in execute_macro
+    result = macro_function(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt_common/clients/jinja.py", line 421, in __call__
+    return self.call_macro(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt_common/clients/jinja.py", line 389, in call_macro
+    return macro(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/jinja2/runtime.py", line 770, in __call__
+    return self._invoke(arguments, autoescape)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/jinja2/runtime.py", line 784, in _invoke
+    rv = self._func(*arguments)
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "<template>", line 21, in macro
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/jinja2/sandbox.py", line 401, in call
+    return __context.call(__obj, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/jinja2/runtime.py", line 303, in call
+    return __obj(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/clients/jinja.py", line 91, in __call__
+    return self.call_macro(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt_common/clients/jinja.py", line 389, in call_macro
+    return macro(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/jinja2/runtime.py", line 770, in __call__
+    return self._invoke(arguments, autoescape)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/jinja2/runtime.py", line 784, in _invoke
+    rv = self._func(*arguments)
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "<template>", line 59, in macro
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/jinja2/sandbox.py", line 401, in call
+    return __context.call(__obj, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/jinja2/runtime.py", line 303, in call
+    return __obj(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/clients/jinja.py", line 91, in __call__
+    return self.call_macro(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt_common/clients/jinja.py", line 389, in call_macro
+    return macro(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/jinja2/runtime.py", line 770, in __call__
+    return self._invoke(arguments, autoescape)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/jinja2/runtime.py", line 784, in _invoke
+    rv = self._func(*arguments)
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "<template>", line 33, in macro
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/jinja2/sandbox.py", line 401, in call
+    return __context.call(__obj, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/jinja2/runtime.py", line 303, in call
+    return __obj(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/clients/jinja.py", line 91, in __call__
+    return self.call_macro(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt_common/clients/jinja.py", line 389, in call_macro
+    return macro(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/jinja2/runtime.py", line 770, in __call__
+    return self._invoke(arguments, autoescape)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/jinja2/runtime.py", line 784, in _invoke
+    rv = self._func(*arguments)
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "<template>", line 52, in macro
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/jinja2/sandbox.py", line 401, in call
+    return __context.call(__obj, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/jinja2/runtime.py", line 303, in call
+    return __obj(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt_common/record.py", line 507, in record_replay_wrapper
+    return func_to_record(*call_args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/adapters/base/impl.py", line 438, in execute
+    return self.connections.execute(sql=sql, auto_begin=auto_begin, fetch=fetch, limit=limit)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/adapters/snowflake/connections.py", line 514, in execute
+    _, cursor = self.add_query(sql, auto_begin)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/adapters/snowflake/connections.py", line 551, in add_query
+    connection, cursor = self._add_standard_queries(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/adapters/snowflake/connections.py", line 607, in _add_standard_queries
+    connection, cursor = self.add_standard_query(query, **kwargs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/adapters/snowflake/connections.py", line 525, in add_standard_query
+    return super().add_query(self._add_query_comment(sql), **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/adapters/sql/connections.py", line 130, in add_query
+    with self.exception_handler(sql):
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/adapters/snowflake/connections.py", line 350, in exception_handler
+    self.rollback_if_open()
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/adapters/base/connections.py", line 125, in rollback_if_open
+    if conn is not None and conn.handle and conn.transaction_open:
+                            ^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/adapters/contracts/connection.py", line 96, in handle
+    self._handle.resolve(self)
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/adapters/contracts/connection.py", line 120, in resolve
+    return self.opener(connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "_udf_code.py", line 406, in new_open_method
+    raise ValueError(f"Failed to use schema {creds.schema}: {str(e)}")
+ValueError: Failed to use schema TPCH_SF1: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "_udf_code.py", line 404, in new_open_method
+    new_session.use_schema(creds.schema)
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/snowpark/session.py", line 3927, in use_schema
+    self._use_object(schema, "schema")
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/snowpark/session.py", line 3980, in _use_object
+    self._run_query(query)
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/snowpark/session.py", line 2837, in _run_query
+    return self._conn.run_query(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 133, in wrap
+    raise ex
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 127, in wrap
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 520, in run_query
+    raise ex
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 505, in run_query
+    results_cursor = self.execute_and_notify_query_listener(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 446, in execute_and_notify_query_listener
+    raise ex
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 437, in execute_and_notify_query_listener
+    results_cursor = self._cursor.execute(query, **kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "_udf_code.py", line 124, in wrapper
+    return original_execute(self, sql, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/connector/cursor.py", line 1092, in execute
+    Error.errorhandler_wrapper(
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/connector/errors.py", line 232, in errorhandler_wrapper
+    handed_over = Error.hand_to_other_handler(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/connector/errors.py", line 287, in hand_to_other_handler
+    cursor.errorhandler(connection, cursor, error_class, error_value)
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/snowflake/connector/errors.py", line 165, in default_errorhandler
+    raise error_class(
+snowflake.connector.errors.ProgrammingError: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/cli/requires.py", line 153, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/cli/requires.py", line 103, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/cli/requires.py", line 235, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/cli/requires.py", line 264, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/cli/requires.py", line 311, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/cli/requires.py", line 328, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/cli/main.py", line 341, in compile
+    results = task.run()
+              ^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/task/runnable.py", line 619, in run
+    result = self.execute_with_hooks(selected_uids)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/task/runnable.py", line 557, in execute_with_hooks
+    before_run_status = self.before_run(adapter, selected_uids)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/task/runnable.py", line 533, in before_run
+    self.populate_adapter_cache(adapter)
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/task/runnable.py", line 522, in populate_adapter_cache
+    adapter.set_relations_cache(cachable_nodes)
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/adapters/base/impl.py", line 618, in set_relations_cache
+    self._relations_cache_for_schemas(relation_configs, required_schemas)
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/adapters/base/impl.py", line 594, in _relations_cache_for_schemas
+    for relation in future.result():
+                    ^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt_common/utils/executor.py", line 20, in connected
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/adapters/snowflake/impl.py", line 258, in list_relations_without_caching
+    schema_objects = self.execute_macro(LIST_RELATIONS_MACRO_NAME, kwargs=kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/adapters/base/impl.py", line 1275, in execute_macro
+    with self.connections.exception_handler(f"macro {macro_name}"):
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/adapters/snowflake/connections.py", line 350, in exception_handler
+    self.rollback_if_open()
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/adapters/base/connections.py", line 125, in rollback_if_open
+    if conn is not None and conn.handle and conn.transaction_open:
+                            ^^^^^^^^^^^
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/adapters/contracts/connection.py", line 96, in handle
+    self._handle.resolve(self)
+  File "/usr/lib/python_udf/8a205822f5ec223037aacf04045ed744280f4d8bc6c0e32d80f64ff609b49471/lib/python3.11/site-packages/dbt/adapters/contracts/connection.py", line 120, in resolve
+    return self.opener(connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "_udf_code.py", line 406, in new_open_method
+    raise ValueError(f"Failed to use schema {creds.schema}: {str(e)}")
+ValueError: Failed to use schema TPCH_SF1: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+
+[0m22:12:20.290424 [debug] [Dummy-1   ]: Resource report: {"command_name": "compile", "command_success": false, "command_wall_clock_time": 6.661656, "process_in_blocks": "0", "process_kernel_time": 1.12, "process_mem_max_rss": "475668", "process_out_blocks": "0", "process_user_time": 9.1}
+[0m22:12:20.291388 [debug] [Dummy-1   ]: Command `cli compile` failed at 22:12:20.291020 after 6.66 seconds
+[0m22:12:20.292105 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 22:28:08.997834 | f6661a1d-f689-48c0-b5f7-a485cab892d1 ==============================
+[0m22:28:08.997834 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m22:28:09.000167 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/tmp/dbt/logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt ', 'target_path': '/tmp/dbt/target/', 'log_format': 'default', 'send_anonymous_usage_stats': 'False'}
+[0m22:28:09.430844 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m22:28:10.708717 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m22:28:10.908933 [info ] [Dummy-1   ]: Unable to do partial parsing because profile has changed
+[0m22:28:10.910988 [info ] [Dummy-1   ]: Unable to do partial parsing because a project config has changed
+[0m22:28:13.358904 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m22:28:13.362627 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m22:28:13.420361 [info ] [Dummy-1   ]: Found 3 models, 20 data tests, 3 sources, 474 macros
+[0m22:28:13.424658 [info ] [Dummy-1   ]: 
+[0m22:28:13.426501 [info ] [Dummy-1   ]: Concurrency: 1 threads (target='dev')
+[0m22:28:13.427132 [info ] [Dummy-1   ]: 
+[0m22:28:13.428135 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m22:28:13.436348 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DEMO_DB_TPCH_SF1_STAGING_MARTS'
+[0m22:28:13.674071 [debug] [ThreadPool]: Using snowflake connection "list_DEMO_DB_TPCH_SF1_STAGING_MARTS"
+[0m22:28:13.675997 [debug] [ThreadPool]: On list_DEMO_DB_TPCH_SF1_STAGING_MARTS: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "snowflake_tpch_demo", "target_name": "dev", "connection_name": "list_DEMO_DB_TPCH_SF1_STAGING_MARTS"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m22:28:13.676808 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:28:14.249934 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.573 seconds
+[0m22:28:14.257057 [debug] [ThreadPool]: Using snowflake connection "list_DEMO_DB_TPCH_SF1_STAGING_MARTS"
+[0m22:28:14.257983 [debug] [ThreadPool]: On list_DEMO_DB_TPCH_SF1_STAGING_MARTS: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "snowflake_tpch_demo", "target_name": "dev", "connection_name": "list_DEMO_DB_TPCH_SF1_STAGING_MARTS"} */
+show objects in DEMO_DB.TPCH_SF1_STAGING_MARTS
+    limit 10000
+    
+;
+[0m22:28:14.328397 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 0.070 seconds
+[0m22:28:14.332200 [debug] [ThreadPool]: Using snowflake connection "list_DEMO_DB_TPCH_SF1_STAGING_MARTS"
+[0m22:28:14.334143 [debug] [ThreadPool]: On list_DEMO_DB_TPCH_SF1_STAGING_MARTS: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "snowflake_tpch_demo", "target_name": "dev", "connection_name": "list_DEMO_DB_TPCH_SF1_STAGING_MARTS"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m22:28:14.392695 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.058 seconds
+[0m22:28:14.396219 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_DEMO_DB_TPCH_SF1_STAGING_MARTS, now list_DEMO_DB_TPCH_SF1_STAGING_STAGING)
+[0m22:28:14.403808 [debug] [ThreadPool]: Using snowflake connection "list_DEMO_DB_TPCH_SF1_STAGING_STAGING"
+[0m22:28:14.404694 [debug] [ThreadPool]: On list_DEMO_DB_TPCH_SF1_STAGING_STAGING: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "snowflake_tpch_demo", "target_name": "dev", "connection_name": "list_DEMO_DB_TPCH_SF1_STAGING_STAGING"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m22:28:14.405514 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:28:14.985764 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.580 seconds
+[0m22:28:14.989295 [debug] [ThreadPool]: Using snowflake connection "list_DEMO_DB_TPCH_SF1_STAGING_STAGING"
+[0m22:28:14.991255 [debug] [ThreadPool]: On list_DEMO_DB_TPCH_SF1_STAGING_STAGING: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "snowflake_tpch_demo", "target_name": "dev", "connection_name": "list_DEMO_DB_TPCH_SF1_STAGING_STAGING"} */
+show objects in DEMO_DB.TPCH_SF1_STAGING_STAGING
+    limit 10000
+    
+;
+[0m22:28:15.080907 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.089 seconds
+[0m22:28:15.084398 [debug] [ThreadPool]: Using snowflake connection "list_DEMO_DB_TPCH_SF1_STAGING_STAGING"
+[0m22:28:15.085195 [debug] [ThreadPool]: On list_DEMO_DB_TPCH_SF1_STAGING_STAGING: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "snowflake_tpch_demo", "target_name": "dev", "connection_name": "list_DEMO_DB_TPCH_SF1_STAGING_STAGING"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m22:28:15.141819 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.056 seconds
+[0m22:28:15.155195 [debug] [Thread-2 (]: Began running node model.snowflake_tpch_demo.customer_revenue
+[0m22:28:15.157154 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_DEMO_DB_TPCH_SF1_STAGING_STAGING, now model.snowflake_tpch_demo.customer_revenue)
+[0m22:28:15.157971 [debug] [Thread-2 (]: Began compiling node model.snowflake_tpch_demo.customer_revenue
+[0m22:28:15.173684 [debug] [Thread-2 (]: Writing injected SQL for node "model.snowflake_tpch_demo.customer_revenue"
+[0m22:28:15.175929 [debug] [Thread-2 (]: Began executing node model.snowflake_tpch_demo.customer_revenue
+[0m22:28:15.177128 [debug] [Thread-2 (]: Finished running node model.snowflake_tpch_demo.customer_revenue
+[0m22:28:15.178029 [debug] [Thread-2 (]: Began running node model.snowflake_tpch_demo.revenue_by_year
+[0m22:28:15.180602 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.snowflake_tpch_demo.customer_revenue, now model.snowflake_tpch_demo.revenue_by_year)
+[0m22:28:15.181417 [debug] [Thread-2 (]: Began compiling node model.snowflake_tpch_demo.revenue_by_year
+[0m22:28:15.189029 [debug] [Thread-2 (]: Writing injected SQL for node "model.snowflake_tpch_demo.revenue_by_year"
+[0m22:28:15.191316 [debug] [Thread-2 (]: Began executing node model.snowflake_tpch_demo.revenue_by_year
+[0m22:28:15.192457 [debug] [Thread-2 (]: Finished running node model.snowflake_tpch_demo.revenue_by_year
+[0m22:28:15.193373 [debug] [Thread-2 (]: Began running node model.snowflake_tpch_demo.stg_orders
+[0m22:28:15.196021 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.snowflake_tpch_demo.revenue_by_year, now model.snowflake_tpch_demo.stg_orders)
+[0m22:28:15.197074 [debug] [Thread-2 (]: Began compiling node model.snowflake_tpch_demo.stg_orders
+[0m22:28:15.204257 [debug] [Thread-2 (]: Writing injected SQL for node "model.snowflake_tpch_demo.stg_orders"
+[0m22:28:15.205516 [debug] [Thread-2 (]: Began executing node model.snowflake_tpch_demo.stg_orders
+[0m22:28:15.207771 [debug] [Thread-2 (]: Finished running node model.snowflake_tpch_demo.stg_orders
+[0m22:28:15.208677 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.source_not_null_tpch_customer_c_custkey.a95b6298b5
+[0m22:28:15.211418 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.snowflake_tpch_demo.stg_orders, now test.snowflake_tpch_demo.source_not_null_tpch_customer_c_custkey.a95b6298b5)
+[0m22:28:15.212257 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.source_not_null_tpch_customer_c_custkey.a95b6298b5
+[0m22:28:15.231773 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.source_not_null_tpch_customer_c_custkey.a95b6298b5"
+[0m22:28:15.234136 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.source_not_null_tpch_customer_c_custkey.a95b6298b5
+[0m22:28:15.235230 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.source_not_null_tpch_customer_c_custkey.a95b6298b5
+[0m22:28:15.236146 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.source_not_null_tpch_lineitem_l_orderkey.9abc2badf0
+[0m22:28:15.238324 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.source_not_null_tpch_customer_c_custkey.a95b6298b5, now test.snowflake_tpch_demo.source_not_null_tpch_lineitem_l_orderkey.9abc2badf0)
+[0m22:28:15.239165 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.source_not_null_tpch_lineitem_l_orderkey.9abc2badf0
+[0m22:28:15.247083 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.source_not_null_tpch_lineitem_l_orderkey.9abc2badf0"
+[0m22:28:15.249452 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.source_not_null_tpch_lineitem_l_orderkey.9abc2badf0
+[0m22:28:15.250691 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.source_not_null_tpch_lineitem_l_orderkey.9abc2badf0
+[0m22:28:15.252751 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.source_not_null_tpch_orders_o_custkey.33f6cc8f42
+[0m22:28:15.253996 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.source_not_null_tpch_lineitem_l_orderkey.9abc2badf0, now test.snowflake_tpch_demo.source_not_null_tpch_orders_o_custkey.33f6cc8f42)
+[0m22:28:15.254763 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.source_not_null_tpch_orders_o_custkey.33f6cc8f42
+[0m22:28:15.265490 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.source_not_null_tpch_orders_o_custkey.33f6cc8f42"
+[0m22:28:15.266855 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.source_not_null_tpch_orders_o_custkey.33f6cc8f42
+[0m22:28:15.269029 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.source_not_null_tpch_orders_o_custkey.33f6cc8f42
+[0m22:28:15.269915 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.source_not_null_tpch_orders_o_orderkey.ebd571817b
+[0m22:28:15.270868 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.source_not_null_tpch_orders_o_custkey.33f6cc8f42, now test.snowflake_tpch_demo.source_not_null_tpch_orders_o_orderkey.ebd571817b)
+[0m22:28:15.272682 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.source_not_null_tpch_orders_o_orderkey.ebd571817b
+[0m22:28:15.280467 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.source_not_null_tpch_orders_o_orderkey.ebd571817b"
+[0m22:28:15.281770 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.source_not_null_tpch_orders_o_orderkey.ebd571817b
+[0m22:28:15.283939 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.source_not_null_tpch_orders_o_orderkey.ebd571817b
+[0m22:28:15.284802 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.source_unique_tpch_customer_c_custkey.048e97fc25
+[0m22:28:15.285828 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.source_not_null_tpch_orders_o_orderkey.ebd571817b, now test.snowflake_tpch_demo.source_unique_tpch_customer_c_custkey.048e97fc25)
+[0m22:28:15.287798 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.source_unique_tpch_customer_c_custkey.048e97fc25
+[0m22:28:15.299073 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.source_unique_tpch_customer_c_custkey.048e97fc25"
+[0m22:28:15.300387 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.source_unique_tpch_customer_c_custkey.048e97fc25
+[0m22:28:15.301447 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.source_unique_tpch_customer_c_custkey.048e97fc25
+[0m22:28:15.303461 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.source_unique_tpch_orders_o_orderkey.374f048af2
+[0m22:28:15.304637 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.source_unique_tpch_customer_c_custkey.048e97fc25, now test.snowflake_tpch_demo.source_unique_tpch_orders_o_orderkey.374f048af2)
+[0m22:28:15.306638 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.source_unique_tpch_orders_o_orderkey.374f048af2
+[0m22:28:15.314380 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.source_unique_tpch_orders_o_orderkey.374f048af2"
+[0m22:28:15.315652 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.source_unique_tpch_orders_o_orderkey.374f048af2
+[0m22:28:15.316696 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.source_unique_tpch_orders_o_orderkey.374f048af2
+[0m22:28:15.318600 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_customer_revenue_customer_name.f0984af1ed
+[0m22:28:15.319614 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.source_unique_tpch_orders_o_orderkey.374f048af2, now test.snowflake_tpch_demo.not_null_customer_revenue_customer_name.f0984af1ed)
+[0m22:28:15.320283 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_customer_revenue_customer_name.f0984af1ed
+[0m22:28:15.328319 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_customer_revenue_customer_name.f0984af1ed"
+[0m22:28:15.330681 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_customer_revenue_customer_name.f0984af1ed
+[0m22:28:15.331687 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_customer_revenue_customer_name.f0984af1ed
+[0m22:28:15.333523 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_customer_revenue_o_custkey.fef8bd39f8
+[0m22:28:15.334667 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_customer_revenue_customer_name.f0984af1ed, now test.snowflake_tpch_demo.not_null_customer_revenue_o_custkey.fef8bd39f8)
+[0m22:28:15.335432 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_customer_revenue_o_custkey.fef8bd39f8
+[0m22:28:15.346179 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_customer_revenue_o_custkey.fef8bd39f8"
+[0m22:28:15.347529 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_customer_revenue_o_custkey.fef8bd39f8
+[0m22:28:15.349759 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_customer_revenue_o_custkey.fef8bd39f8
+[0m22:28:15.350720 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_customer_revenue_total_orders.02ef223b79
+[0m22:28:15.352788 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_customer_revenue_o_custkey.fef8bd39f8, now test.snowflake_tpch_demo.not_null_customer_revenue_total_orders.02ef223b79)
+[0m22:28:15.353663 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_customer_revenue_total_orders.02ef223b79
+[0m22:28:15.361624 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_customer_revenue_total_orders.02ef223b79"
+[0m22:28:15.363009 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_customer_revenue_total_orders.02ef223b79
+[0m22:28:15.365356 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_customer_revenue_total_orders.02ef223b79
+[0m22:28:15.366256 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_customer_revenue_total_revenue.79c910a2f8
+[0m22:28:15.368388 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_customer_revenue_total_orders.02ef223b79, now test.snowflake_tpch_demo.not_null_customer_revenue_total_revenue.79c910a2f8)
+[0m22:28:15.369287 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_customer_revenue_total_revenue.79c910a2f8
+[0m22:28:15.377130 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_customer_revenue_total_revenue.79c910a2f8"
+[0m22:28:15.378301 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_customer_revenue_total_revenue.79c910a2f8
+[0m22:28:15.380434 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_customer_revenue_total_revenue.79c910a2f8
+[0m22:28:15.381346 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.unique_customer_revenue_o_custkey.67287624df
+[0m22:28:15.382311 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_customer_revenue_total_revenue.79c910a2f8, now test.snowflake_tpch_demo.unique_customer_revenue_o_custkey.67287624df)
+[0m22:28:15.384228 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.unique_customer_revenue_o_custkey.67287624df
+[0m22:28:15.391933 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.unique_customer_revenue_o_custkey.67287624df"
+[0m22:28:15.393054 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.unique_customer_revenue_o_custkey.67287624df
+[0m22:28:15.395093 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.unique_customer_revenue_o_custkey.67287624df
+[0m22:28:15.395923 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_revenue_by_year_order_year.e1df148836
+[0m22:28:15.396861 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.unique_customer_revenue_o_custkey.67287624df, now test.snowflake_tpch_demo.not_null_revenue_by_year_order_year.e1df148836)
+[0m22:28:15.397512 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_revenue_by_year_order_year.e1df148836
+[0m22:28:15.405419 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_revenue_by_year_order_year.e1df148836"
+[0m22:28:15.407613 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_revenue_by_year_order_year.e1df148836
+[0m22:28:15.408575 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_revenue_by_year_order_year.e1df148836
+[0m22:28:15.409325 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_revenue_by_year_total_orders.2a5c4d6ea0
+[0m22:28:15.411353 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_revenue_by_year_order_year.e1df148836, now test.snowflake_tpch_demo.not_null_revenue_by_year_total_orders.2a5c4d6ea0)
+[0m22:28:15.412052 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_revenue_by_year_total_orders.2a5c4d6ea0
+[0m22:28:15.422582 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_revenue_by_year_total_orders.2a5c4d6ea0"
+[0m22:28:15.423688 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_revenue_by_year_total_orders.2a5c4d6ea0
+[0m22:28:15.424650 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_revenue_by_year_total_orders.2a5c4d6ea0
+[0m22:28:15.426605 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_revenue_by_year_total_revenue.1661877bbb
+[0m22:28:15.427692 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_revenue_by_year_total_orders.2a5c4d6ea0, now test.snowflake_tpch_demo.not_null_revenue_by_year_total_revenue.1661877bbb)
+[0m22:28:15.428438 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_revenue_by_year_total_revenue.1661877bbb
+[0m22:28:15.436281 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_revenue_by_year_total_revenue.1661877bbb"
+[0m22:28:15.438437 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_revenue_by_year_total_revenue.1661877bbb
+[0m22:28:15.439469 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_revenue_by_year_total_revenue.1661877bbb
+[0m22:28:15.441376 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_stg_orders_customer_name.1440ea4abd
+[0m22:28:15.442314 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_revenue_by_year_total_revenue.1661877bbb, now test.snowflake_tpch_demo.not_null_stg_orders_customer_name.1440ea4abd)
+[0m22:28:15.443087 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_stg_orders_customer_name.1440ea4abd
+[0m22:28:15.453197 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_stg_orders_customer_name.1440ea4abd"
+[0m22:28:15.454366 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_stg_orders_customer_name.1440ea4abd
+[0m22:28:15.455362 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_stg_orders_customer_name.1440ea4abd
+[0m22:28:15.457381 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_stg_orders_o_custkey.d1748b820c
+[0m22:28:15.458502 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_stg_orders_customer_name.1440ea4abd, now test.snowflake_tpch_demo.not_null_stg_orders_o_custkey.d1748b820c)
+[0m22:28:15.459311 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_stg_orders_o_custkey.d1748b820c
+[0m22:28:15.468074 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_stg_orders_o_custkey.d1748b820c"
+[0m22:28:15.469331 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_stg_orders_o_custkey.d1748b820c
+[0m22:28:15.470414 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_stg_orders_o_custkey.d1748b820c
+[0m22:28:15.472401 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_stg_orders_o_orderkey.6f73f629f3
+[0m22:28:15.473451 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_stg_orders_o_custkey.d1748b820c, now test.snowflake_tpch_demo.not_null_stg_orders_o_orderkey.6f73f629f3)
+[0m22:28:15.474246 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_stg_orders_o_orderkey.6f73f629f3
+[0m22:28:15.484798 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_stg_orders_o_orderkey.6f73f629f3"
+[0m22:28:15.485970 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_stg_orders_o_orderkey.6f73f629f3
+[0m22:28:15.488020 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_stg_orders_o_orderkey.6f73f629f3
+[0m22:28:15.488873 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_stg_orders_order_year.d038e0488a
+[0m22:28:15.489874 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_stg_orders_o_orderkey.6f73f629f3, now test.snowflake_tpch_demo.not_null_stg_orders_order_year.d038e0488a)
+[0m22:28:15.491659 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_stg_orders_order_year.d038e0488a
+[0m22:28:15.499393 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_stg_orders_order_year.d038e0488a"
+[0m22:28:15.500844 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_stg_orders_order_year.d038e0488a
+[0m22:28:15.503082 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_stg_orders_order_year.d038e0488a
+[0m22:28:15.504067 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.not_null_stg_orders_total_price.cdb764cd1b
+[0m22:28:15.505062 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_stg_orders_order_year.d038e0488a, now test.snowflake_tpch_demo.not_null_stg_orders_total_price.cdb764cd1b)
+[0m22:28:15.506866 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.not_null_stg_orders_total_price.cdb764cd1b
+[0m22:28:15.514807 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.not_null_stg_orders_total_price.cdb764cd1b"
+[0m22:28:15.515971 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.not_null_stg_orders_total_price.cdb764cd1b
+[0m22:28:15.517020 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.not_null_stg_orders_total_price.cdb764cd1b
+[0m22:28:15.519063 [debug] [Thread-2 (]: Began running node test.snowflake_tpch_demo.unique_stg_orders_o_orderkey.2ebe3d4c35
+[0m22:28:15.520225 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.snowflake_tpch_demo.not_null_stg_orders_total_price.cdb764cd1b, now test.snowflake_tpch_demo.unique_stg_orders_o_orderkey.2ebe3d4c35)
+[0m22:28:15.522067 [debug] [Thread-2 (]: Began compiling node test.snowflake_tpch_demo.unique_stg_orders_o_orderkey.2ebe3d4c35
+[0m22:28:15.529716 [debug] [Thread-2 (]: Writing injected SQL for node "test.snowflake_tpch_demo.unique_stg_orders_o_orderkey.2ebe3d4c35"
+[0m22:28:15.530872 [debug] [Thread-2 (]: Began executing node test.snowflake_tpch_demo.unique_stg_orders_o_orderkey.2ebe3d4c35
+[0m22:28:15.531941 [debug] [Thread-2 (]: Finished running node test.snowflake_tpch_demo.unique_stg_orders_o_orderkey.2ebe3d4c35
+[0m22:28:15.535955 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m22:28:15.537876 [debug] [Dummy-1   ]: Connection 'test.snowflake_tpch_demo.unique_stg_orders_o_orderkey.2ebe3d4c35' was properly closed.
+[0m22:28:15.542138 [debug] [Dummy-1   ]: Command end result
+[0m22:28:15.583675 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m22:28:15.587321 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m22:28:15.599032 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m22:28:15.603670 [debug] [Dummy-1   ]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 6.7203884, "process_in_blocks": "0", "process_kernel_time": 1.32, "process_mem_max_rss": "492188", "process_out_blocks": "0", "process_user_time": 9.26}
+[0m22:28:15.604557 [debug] [Dummy-1   ]: Command `cli compile` succeeded at 22:28:15.604271 after 6.72 seconds
+[0m22:28:15.605216 [debug] [Dummy-1   ]: Flushing usage events
